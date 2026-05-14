@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   application:
@@ -9,7 +9,18 @@ spring:
       enabled: true
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+
       mvc:
+        routes:
+          - id: api-registro
+            uri: lb://api-registro
+            predicates:
+              - Path=/api/registro/**
         discovery:
           locator:
             enabled: true
