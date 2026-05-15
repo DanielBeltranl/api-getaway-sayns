@@ -20,7 +20,7 @@ spring:
           - id: api-registro
             uri: lb://api-registro
             predicates:
-              - Path=/api/registro/**
+              - Path=/api/registro,/api/registro/**
         discovery:
           locator:
             enabled: true
@@ -46,6 +46,5 @@ management:
   endpoint:
     health:
       show-details: always
-
 
 

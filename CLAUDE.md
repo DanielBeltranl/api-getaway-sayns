@@ -8,7 +8,12 @@ Este proyecto contiene una api-gateway. Debe recibir un token proveniente de sup
 
 3.- Que el rol que contenga este entre USER, ADMIN
 
-4.- Aun no se cuenta con los enpointsa los que debe redirigir
+
+## Instrucciones particulares
+
+**Registro**
+
+- El post no requiere de token
 
 
 ## Commands
