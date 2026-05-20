@@ -6,7 +6,7 @@ Este proyecto contiene una api-gateway. Debe recibir un token proveniente de sup
 
 2.- Que el token tenga firma de supabase
 
-3.- Que el rol que contenga este entre USER, ADMIN
+3.- Que el rol que contenga este entre ADMIN, PERSONA, INSTITUCION (leído desde `user_metadata.role`)
 
 
 ## Instrucciones particulares

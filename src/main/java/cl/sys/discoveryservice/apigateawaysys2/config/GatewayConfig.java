@@ -19,7 +19,40 @@ public class GatewayConfig {
                         RequestPredicates.path("/api/registro").or(RequestPredicates.path("/api/registro/**")),
                         HandlerFunctions.http()
                 )
-                .filter(LoadBalancerFilterFunctions.lb("api-registro"))
+                .filter(LoadBalancerFilterFunctions.lb("bff-sanys"))
+                .build();
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> apiLoginRoute() {
+        return GatewayRouterFunctions.route("api-login")
+                .route(
+                        RequestPredicates.path("/api/login").or(RequestPredicates.path("/api/login/**")),
+                        HandlerFunctions.http()
+                )
+                .filter(LoadBalancerFilterFunctions.lb("bff-sanys"))
+                .build();
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> reportesRoute() {
+        return GatewayRouterFunctions.route("reportes")
+                .route(
+                        RequestPredicates.path("/reportes").or(RequestPredicates.path("/reportes/**")),
+                        HandlerFunctions.http()
+                )
+                .filter(LoadBalancerFilterFunctions.lb("bff-sanys"))
+                .build();
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> notificationsRoute() {
+        return GatewayRouterFunctions.route("notifications")
+                .route(
+                        RequestPredicates.path("/api/notifications").or(RequestPredicates.path("/api/notifications/**")),
+                        HandlerFunctions.http()
+                )
+                .filter(LoadBalancerFilterFunctions.lb("bff-sanys"))
                 .build();
     }
 }
